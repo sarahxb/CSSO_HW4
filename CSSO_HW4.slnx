@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Deposit/Deposit.vcxproj" Id="782d4b9e-7bd8-4787-947a-9e739ec007db" />
+  <Project Path="Donate/Donate.vcxproj" Id="88b9efd5-5fa1-47b9-bfcb-48e875710bba" />
+  <Project Path="Management/Management.vcxproj" Id="fee9bbb1-646b-42c6-a5a0-8710b3192043" />
+  <Project Path="Sell/Sell.vcxproj" Id="34fd6032-5fa3-4ab9-a279-6b3fd9a32a83" />
+</Solution>
