@@ -7,10 +7,26 @@ HANDLE hEvtStartDay, hEvtDonDone;
 DWORD* shelves, * valability, * prices;
 
 void SetupFileSystem() {
-    // Creaza folderele recursiv prin comanda de sistem
-    char cmd[MAX_PATH];
-    sprintf(cmd, "mkdir \"%s\\Reports\\Summary\"", ROOT_PATH);
-    system(cmd);
+
+    if (!CreateDirectoryA("C:\\Facultate", NULL))
+        if (GetLastError() != ERROR_ALREADY_EXISTS)
+            ErrorExit("Nu am putut crea C:\\Facultate");
+
+    if (!CreateDirectoryA("C:\\Facultate\\CSSO", NULL))
+        if (GetLastError() != ERROR_ALREADY_EXISTS)
+            ErrorExit("Nu am putut crea C:\\Facultate\\CSSO");
+
+    if (!CreateDirectoryA("C:\\Facultate\\CSSO\\H4", NULL))
+        if (GetLastError() != ERROR_ALREADY_EXISTS)
+            ErrorExit("Nu am putut crea C:\\Facultate\\CSSO\\H4");
+
+    if (!CreateDirectoryA("C:\\Facultate\\CSSO\\H4\\Reports", NULL))
+        if (GetLastError() != ERROR_ALREADY_EXISTS)
+            ErrorExit("Nu am putut crea C:\\Facultate\\CSSO\\H4\\Reports");
+
+    if (!CreateDirectoryA("C:\\Facultate\\CSSO\\H4\\Reports\\Summary", NULL))
+        if (GetLastError() != ERROR_ALREADY_EXISTS)
+            ErrorExit("Nu am putut crea C:\\Facultate\\CSSO\\H4\\Reports\\Summary");
 
     std::string pSold = GetPath("Reports\\Summary\\sold.txt");
     std::string pDon = GetPath("Reports\\Summary\\donations.txt");
